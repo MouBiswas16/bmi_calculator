@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+import '../utils/color_constants.dart';
+
 class ResultScreen extends StatefulWidget {
   final dynamic data;
   const ResultScreen({super.key, this.data});
@@ -11,9 +13,6 @@ class ResultScreen extends StatefulWidget {
 }
 
 class _ResultScreenState extends State<ResultScreen> {
-  Color appBarColor = Color(0xff03061C);
-  Color backgroundColor = Color(0xff03061B);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,12 +21,12 @@ class _ResultScreenState extends State<ResultScreen> {
         title: Text(
           "BMI Calculator",
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.black,
             fontSize: 34,
             fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: appBarColor,
+        backgroundColor: resultScreenAppbarColor,
       ),
       backgroundColor: backgroundColor,
       body: Center(

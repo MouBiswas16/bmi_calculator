@@ -4,6 +4,8 @@ import 'package:bmi_calculator/screens/custom_cards.dart';
 import 'package:bmi_calculator/screens/result_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../utils/color_constants.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -12,21 +14,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  Color appBarColor = Color(0xff03061C);
-  Color backgroundColor = Color(0xff03061B);
-  Color cardColor = Color(0xff171830);
-  bool isMale = true;
-  double height = 120;
-  int age = 20;
-  double weight = 30;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "BMI CALCULATOR",
+          "bmi calculator".toUpperCase(),
           style: TextStyle(
             color: Colors.white,
             fontSize: 34,
