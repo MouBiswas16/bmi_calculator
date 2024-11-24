@@ -47,11 +47,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       flex: 1,
                       child: InkWell(
                         onTap: () {
-                          provider.isMaleTrue(isMale);
+                          provider.toggleGender(true);
                         },
                         child: Container(
                           child: CustomCards(
-                            color: isMale == true
+                            color: provider.isMale
                                 ? Colors.deepPurpleAccent
                                 : cardColor,
                             myChild: Column(
@@ -80,11 +80,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       flex: 1,
                       child: InkWell(
                         onTap: () {
-                          provider.isMaleFalse(isMale);
+                          provider.toggleGender(false);
                         },
                         child: Container(
                           child: CustomCards(
-                            color: isMale == false
+                            color: !provider.isMale
                                 ? Colors.deepPurpleAccent
                                 : cardColor,
                             myChild: Column(
@@ -314,12 +314,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 minWidth: double.infinity,
                 color: Colors.pink,
                 onPressed: () {
-                  // provider.result();
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => ResultScreen(),
-                    ),
-                  );
+                  Navigator.of(context).pushNamed("/result");
                 },
                 child: Text(
                   "CALCULATE",

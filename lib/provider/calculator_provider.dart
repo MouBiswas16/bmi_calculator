@@ -6,13 +6,10 @@ class CalculatorProvider extends ChangeNotifier {
   // dynamic data;
   var outcome = "";
 
-  void isMaleFalse(isMale) {
-    isMale = false;
-    // notifyListeners();
-  }
+  bool isMale = true;
 
-  void isMaleTrue(isMale) {
-    isMale = true;
+  void toggleGender(bool maleSelected) {
+    isMale = maleSelected;
     notifyListeners();
   }
 
@@ -45,13 +42,12 @@ class CalculatorProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void result(String outcome) {
+  String result() {
     double h = height / 100;
     double w = weight;
     double heightSquare = h * h;
 
     double result = w / heightSquare;
-
     if (result >= 25) {
       outcome = "Over Weight";
     } else if (result >= 18) {
@@ -60,5 +56,6 @@ class CalculatorProvider extends ChangeNotifier {
       outcome = "Under Weight";
     }
     notifyListeners();
+    return outcome;
   }
 }

@@ -2,6 +2,7 @@
 
 import 'package:bmi_calculator/provider/calculator_provider.dart';
 import 'package:bmi_calculator/screens/home_screen.dart';
+import 'package:bmi_calculator/screens/result_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -22,7 +23,10 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'BMI Calculator',
         debugShowCheckedModeBanner: false,
-        home: HomeScreen(),
+        routes: {
+          "/": (context) => HomeScreen(),
+          "/result": (context) => ResultScreen(),
+        },
       ),
     );
   }

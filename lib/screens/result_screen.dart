@@ -39,7 +39,7 @@ class ResultScreen extends StatelessWidget {
                     color: Colors.amber,
                     child: Center(
                       child: Text(
-                        provider.result.toString(),
+                        provider.result(),
                         style: TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.bold,
